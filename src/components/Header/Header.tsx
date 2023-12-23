@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { FC, memo } from "react";
 import {
   HeaderContainer,
   HeaderIconContainer,
@@ -8,8 +8,11 @@ import {
 import logo from "../../assets/logo.png";
 import { ExitIcon } from "../svg";
 import { Empty } from "../Empty";
+import { useNavigate } from "react-router-dom";
 
-const Header = () => {
+const Header: FC<{ isPrivate?: boolean }> = ({ isPrivate }) => {
+  const navigate = useNavigate();
+
   return (
     <HeaderView>
       <HeaderContainer>
@@ -17,9 +20,16 @@ const Header = () => {
         <Empty />
         <HeaderLink>Контакты</HeaderLink>
         <HeaderLink>Помощь</HeaderLink>
-        <HeaderIconContainer>
-          <ExitIcon />
-        </HeaderIconContainer>
+        {isPrivate && (
+          <HeaderIconContainer
+            onClick={() => {
+              localStorage.clear();
+              navigate("/signIn", { replace: true });
+            }}
+          >
+            <ExitIcon />
+          </HeaderIconContainer>
+        )}
       </HeaderContainer>
     </HeaderView>
   );

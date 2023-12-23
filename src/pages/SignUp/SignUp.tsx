@@ -59,7 +59,7 @@ const SignUpPage = () => {
 
     try {
       await signUp({ login, password });
-      navigate("/");
+      navigate("/signIn", { replace: true });
     } catch {
       setIsError(true);
     }

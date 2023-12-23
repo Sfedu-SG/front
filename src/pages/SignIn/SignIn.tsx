@@ -10,9 +10,13 @@ import {
 } from "../../components";
 import { useForm } from "react-hook-form";
 import { Alert, TextField } from "@mui/material";
+import { signIn } from "../../utils/services/authService.ts";
+import { useNavigate } from "react-router-dom";
 
 const SignInPage = () => {
   const [isError, setIsError] = useState(false);
+
+  const navigate = useNavigate();
 
   const {
     register,
@@ -32,7 +36,7 @@ const SignInPage = () => {
     const login = getValues("login");
     const password = getValues("password");
 
-    const values = { login, password, };
+    const values = { login, password };
 
     if (
       Object.entries(values).some((item) => {
@@ -45,12 +49,14 @@ const SignInPage = () => {
     ) {
       return;
     }
-    
-   /*  try {
-      await SignIn({ login, password });
+
+    try {
+      const data = await signIn({ login, password });
+      localStorage.setItem("access_token", data["access_token"]);
+      navigate("/", { replace: true });
     } catch {
       setIsError(true);
-    } */
+    }
   };
 
   return (
@@ -80,7 +86,6 @@ const SignInPage = () => {
           helperText={errors.password?.message}
           {...register("password", { required: true })}
         />
-
       </AuthInputsContainer>
       <AuthButtonContainer>
         <Button onClick={handleSubmit(onSubmit)}>Зарегистрироваться</Button>
