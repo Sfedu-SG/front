@@ -1,6 +1,5 @@
 import { PageLayouting } from "../../hocs";
 import { memo } from "react";
-
 const MainPage = () => {
   return (
     <div>
@@ -9,4 +8,4 @@ const MainPage = () => {
   );
 };
 
-export default PageLayouting(memo(MainPage), true);
+export default PageLayouting(memo(MainPage));
