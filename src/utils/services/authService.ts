@@ -11,3 +11,15 @@ export const signUp = async ({
 
   return data;
 };
+
+export const signIn = async ({
+  login,
+  password,
+}: {
+  login: string;
+  password: string;
+}) => {
+  const { data } = await axiosInstance.post("/auth", { login, password });
+
+  return data;
+};
