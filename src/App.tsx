@@ -1,13 +1,17 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
-import { MainPage } from "./pages/Main";
+import { MainPage, SignUpPage } from "./pages";
 import "./App.css";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: MainPage,
+  },
+  {
+    path: "/signUp",
+    Component: SignUpPage,
   },
 ]);
 
