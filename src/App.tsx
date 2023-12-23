@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import { MainPage } from "./pages/Main";
+import "./App.css";
 
 const router = createBrowserRouter([
   {
