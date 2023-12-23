@@ -11,9 +11,12 @@ import {
 import { useForm } from "react-hook-form";
 import { Alert, TextField } from "@mui/material";
 import { signUp } from "../../utils/services/authService.ts";
+import { useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
   const [isError, setIsError] = useState(false);
+
+  const navigate = useNavigate();
 
   const {
     register,
@@ -56,6 +59,7 @@ const SignUpPage = () => {
 
     try {
       await signUp({ login, password });
+      navigate("/");
     } catch {
       setIsError(true);
     }

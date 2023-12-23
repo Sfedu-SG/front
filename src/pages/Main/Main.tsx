@@ -9,4 +9,4 @@ const MainPage = () => {
   );
 };
 
-export default PageLayouting(memo(MainPage));
+export default PageLayouting(memo(MainPage), true);
