@@ -1,59 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+import { styled } from "@mui/material";
 
-.root {
+export const ProfileItemContainer = styled("div")(
+  () => `
     height: 13vh;
     width: 46vw;
     background-color: #F1F3F9D9;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    padding-top: 26px;
-    padding-bottom: 15px;
+    justify-content: space-between;
+    padding: 12px 24px;
+`
+);
 
-}
-
-.other {
+export const Other = styled("div")(
+  () => `
     display: flex;
-    flex-direction: row;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    margin: auto;
-}
+    padding-top: 12px;
+    padding-left: 24px;
+`
+);
 
-.userData {
+export const UserData = styled("div")(
+  () => `
     display: flex;
     flex-direction: column;
-}
+`
+);
 
-.user {
-    font-family: 'Raleway', sans-serif;
+export const Username = styled("span")(
+  () => `
+    font-family: 'Montserrat';
     font-size: 28px;
     font-weight: 500;
     line-height: 33px;
     letter-spacing: 0em;
     color: #000000;
-}
+`
+);
 
-.birthday {
-    font-family: 'Montserrat', sans-serif;
+export const Birthday = styled("span")(
+  () => `
+    font-family: 'Montserrat';
     font-size: 18px;
     font-weight: 300;
     line-height: 28px;
     letter-spacing: 0em;
     text-align: left;
     color: #71716C;
-}
+`
+);
 
-.link {
+export const IconContainer = styled("div")(
+  () => `
     height: 40px;
     width: 40px;
-}
+`
+);
 
-.changeDate {
-    font-family: 'Montserrat', sans-serif;
+export const ChangeDate = styled("span")(
+  () => `
+    font-family: 'Montserrat';
     font-size: 18px;
     font-weight: 300;
     line-height: 28px;
@@ -62,5 +71,5 @@
     color: #71716C;
     display: flex;
     justify-content: flex-end;
-    width: 95%;
-}
+`
+);

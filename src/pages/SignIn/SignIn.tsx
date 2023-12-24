@@ -3,7 +3,7 @@ import { memo, useState } from "react";
 import {
   ActivePageTitle,
   AuthButtonContainer,
-  AuthContainer,
+  ContentContainer,
   AuthInputsContainer,
   AuthTitleTextContainer,
   Button,
@@ -60,7 +60,7 @@ const SignInPage = () => {
   };
 
   return (
-    <AuthContainer>
+    <ContentContainer>
       {isError && (
         <Alert severity="error" onClick={() => setIsError(false)}>
           Что-то пошло не так
@@ -90,7 +90,7 @@ const SignInPage = () => {
       <AuthButtonContainer>
         <Button onClick={handleSubmit(onSubmit)}>Зарегистрироваться</Button>
       </AuthButtonContainer>
-    </AuthContainer>
+    </ContentContainer>
   );
 };
 
