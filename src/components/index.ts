@@ -7,3 +7,4 @@ export * from "./AuthTitleTextConteiner";
 export * from "./AuthInputsContainer";
 export * from "./Button";
 export * from "./AuthButtonContainer";
+export * from "./UploadForm";
