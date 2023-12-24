@@ -3,7 +3,8 @@
 .root {
     width: 46vw;
     height: 50vh;
-    background-color: rgba(241, 243, 249, 0.61);
+    /* background-color: rgba(241, 243, 249, 0.61); */
+    background-color: red;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -34,4 +35,13 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.trash {
+    display: block;
+    position: relative;
+    height: 38px;
+    width: 34px;
+    top: 0px;
+    right: 30px;
 }
